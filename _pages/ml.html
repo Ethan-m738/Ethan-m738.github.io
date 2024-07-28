@@ -161,14 +161,8 @@ excerpt: "Experiemental Machine Learning Implementation"
       </div>
       <div id="result-message" class="black-text"></div>
   </form>
-  
-  <script>
-  document.getElementById('data-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the form from submitting the traditional way
-      var resultMessage = document.getElementById('result-message');
-      resultMessage.textContent = "Depression score likely: 4/5, consider seeking mental health resources, recommendation not available at this time";
-  });
-  </script>
+
+  <p class="black-text">Note: this does not yet work as intended, the model does not function as intended when being run through an external source as a backend, the model itself was saved and should be able to be used to the degree that it was trained.</p>
 
 <script>
     var style = document.createElement('style');
