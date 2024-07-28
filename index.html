@@ -1,6 +1,24 @@
 ---
-layout: home
-author_profile: true
+layout: archive
+author_profile: false
+
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: assets/images/unsplash-image-7.jpg
+  actions:
+    - label: "Search table"
+      url: "/search-table/"
+      class: "btn--primary"
+    - label: "machine learning"
+      url: "ml"
+excerpt: "Tagline todo"
+intro: 
+  - excerpt: 'excerpt todo'
+
+  
 ---
 
-<p>This text should appear above the recent posts.</p>
+{% include feature_row id="intro" type="center" %}
+
+
