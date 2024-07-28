@@ -1,0 +1,99 @@
+---
+permalink: /resources/
+author_profile: false
+collection: resources
+layout: splash
+---
+
+{% include breadcrumbs.html %}
+
+<br/>
+<h1>Table</h1>
+<p>todo</p>
+<p>todo</p>
+<br/>
+<hr/>
+
+<table id="search-table" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Categories</th>
+            <th>Additional Information</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in site.resources %}
+        <tr>
+          <td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></td>
+          <td>{{ post.location }}</td>
+          <td>{{ post.categories }}</td>
+          <td>{{ post.additional-information }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <!-- <tfoot>
+        <tr>
+            <th>Title</th>
+            <th>Locations</th>
+            <th>Categories</th>
+            <th>Additional Information</th>
+        </tr>
+    </tfoot> -->
+</table>
+
+<script>
+    $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">');
+
+    let table = new DataTable('#search-table', {
+        select: true,
+        lengthMenu: [5, 10, 25, { label: 'All', value: -1 }]
+    });
+
+    $('#search-table').on('click', 'tbody tr', function () {
+        var data = table.row(this).data();
+        // data[0] looks like this: "<a href=\"/optional-zzz/search-table/xxxx/\">xxxx</a>"
+        window.location.href = data[0].split('"')[1].split('/').slice(-2)[0];
+    });
+
+    var style = document.createElement('style');
+    style.innerHTML = `
+        colgroup {
+            display: table-row;
+        }
+        option {
+            background-color: black;
+        }
+        .dt-length, .dt-search {
+            display: inline-flex;
+        }
+        #search-table tbody tr:hover {
+            background-color: #222222;
+            cursor: pointer;
+        }
+        #search-table {
+            display: inline;
+        }
+
+        #main > article > section > nav > ol {
+            float: left;
+        }
+        .breadcrumbs {
+            padding-inline: unset;
+        }
+        #main > article > section > nav > ol > span {
+            visibility: hidden;
+            position: relative;
+        }
+
+        #main > article > section > nav > ol > span:after {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "/resources/";
+        }
+    `;
+    document.head.appendChild(style);
+</script>

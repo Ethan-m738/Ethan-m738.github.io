@@ -21,7 +21,7 @@ repository               : "Ethan-m738/HealthHack"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/apple-touch-icon.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : "Health Hack" # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+breadcrumbs              : true
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "utterances", "giscus", "custom"
@@ -252,7 +252,7 @@ compress_html:
 
 # Collections
 collections:
-  recipes:
+  resources:
     output: true
     permalink: /:collection/:path/
 
@@ -275,3 +275,16 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _resources
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      share: true
+
+head_scripts:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - https://cdn.datatables.net/2.0.8/js/dataTables.min.js
