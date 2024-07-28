@@ -1,0 +1,192 @@
+---
+title: "Machine Learning"
+permalink: /ml/
+layout: archive
+author_profile: false
+
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: assets/images/canvadownloadbanner.png
+excerpt: "Experiemental Machine Learning Implementation"
+---
+
+<p class="black-text">Enter sample data for the model to use in suggesting a treatment option.</p>
+
+<form id="data-form" action="/submit-form" method="post">
+    <div>
+      <label for="age" class="black-text">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" class="black-text">
+    </div>
+    <div>
+      <label for="course" class="black-text">Course:</label>
+      <input type="text" id="course" name="course" placeholder="Enter your course" class="black-text">
+    </div>
+    <div>
+      <label for="gender" class="black-text">Gender:</label>
+      <select id="gender" name="gender" class="black-text">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div>
+      <label for="cgpa" class="black-text">CGPA:</label>
+      <input type="number" step="0.01" id="cgpa" name="cgpa" placeholder="Enter your CGPA" class="black-text">
+    </div>
+    <div>
+      <label for="stress_level" class="black-text">Stress Level:</label>
+      <select id="stress_level" name="stress_level" class="black-text">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label for="anxiety_score" class="black-text">Anxiety Score:</label>
+      <select id="anxiety_score" name="anxiety_score" class="black-text">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label for="sleep_quality" class="black-text">Sleep Quality:</label>
+      <select id="sleep_quality" name="sleep_quality" class="black-text">
+        <option value="good">Good</option>
+        <option value="average">Average</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="physical_activity" class="black-text">Physical Activity:</label>
+      <select id="physical_activity" name="physical_activity" class="black-text">
+        <option value="moderate">Moderate</option>
+        <option value="low">Low</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="diet_quality" class="black-text">Diet Quality:</label>
+      <select id="diet_quality" name="diet_quality" class="black-text">
+        <option value="average">Average</option>
+        <option value="good">Good</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="social_support" class="black-text">Social Support:</label>
+      <select id="social_support" name="social_support" class="black-text">
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="relationship_status" class="black-text">Relationship Status:</label>
+      <select id="relationship_status" name="relationship_status" class="black-text">
+        <option value="single">Single</option>
+        <option value="in_a_relationship">In a Relationship</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="substance_use" class="black-text">Substance Use:</label>
+      <select id="substance_use" name="substance_use" class="black-text">
+        <option value="never">Never</option>
+        <option value="occasionally">Occasionally</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="counseling_services" class="black-text">Counseling Services:</label>
+      <select id="counseling_services" name="counseling_services" class="black-text">
+        <option value="never">Never</option>
+        <option value="occasionally">Occasionally</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="family_history" class="black-text">Family History:</label>
+      <select id="family_history" name="family_history" class="black-text">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div>
+      <label for="chronic_illness" class="black-text">Chronic Illness:</label>
+      <select id="chronic_illness" name="chronic_illness" class="black-text">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div>
+      <label for="financial_stress" class="black-text">Financial Stress:</label>
+      <select id="financial_stress" name="financial_stress" class="black-text">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label for="extracurricular_involvement" class="black-text">Extracurricular Involvement:</label>
+      <select id="extracurricular_involvement" name="extracurricular_involvement" class="black-text">
+        <option value="moderate">Moderate</option>
+        <option value="low">Low</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="semester_credit" class="black-text">Semester Credit:</label>
+      <input type="number" id="semester_credit" name="semester_credit" placeholder="Enter your semester credit" class="black-text">
+    </div>
+    <div>
+      <label for="residence_type" class="black-text">Residence Type:</label>
+      <select id="residence_type" name="residence_type" class="black-text">
+        <option value="on-campus">On-Campus</option>
+        <option value="off-campus">Off-Campus</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+      </div>
+      <div id="result-message" class="black-text"></div>
+  </form>
+  
+  <script>
+  document.getElementById('data-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting the traditional way
+      var resultMessage = document.getElementById('result-message');
+      resultMessage.textContent = "Depression score likely: 4/5, consider seeking mental health resources, recommendation not available at this time";
+  });
+  </script>
+
+<script>
+    var style = document.createElement('style');
+    style.innerHTML = `
+        #main > div {
+          margin-top: -1rem;
+        }
+        .archive__item-body:first-child {
+          margin: 2em 1em 2em 0;
+          padding-left: 1em;
+          padding-right: 1em;
+          font-style: italic;
+          border-left: 0.25em solid #f21368;
+          width: 100%;
+        }
+        .btn--light-outline {
+          border: 0.05em solid #f21368;
+        }
+    `;
+    document.head.appendChild(style);
+</script>
